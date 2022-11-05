@@ -2,12 +2,14 @@
 A simple resume app. - In fulfilment of HNG Mobile track task 2.
 Summary of my resume and a little about me.
 
+
 ## Features
 - Picture of self
 - Name, slack username, title
 - Support for medium and large screens
 - Dark mode
 - Multi-language support (English, German, French)
+
 
 ## Codebase Description
 A simple android app built natively with Kotlin in android studio.
@@ -21,14 +23,17 @@ Preference datastore is used to persist the current theme setting.
 With the alternative resource provisioning, app features such as multi language, adaptive layout, dark mode are made possible.
 By providing alternative resources, the android system is able to run in various modes. In addition to the defaults, alternative layouts were provided for 3 other screen orientations or sizes, 2 alternative strings sets for German and French, as well as other details such as colour and drawables(pictures, vectors) for dark theme.
 
+
 ## Design
 Inspiration was drawn from browsing various designs online. With my little background in graphic design I prepared some of the pictures and icons I used myself.
 
 In medium display or portrait layout mode, the picture and a brief info is displayed. Details are accessed via the bottom buttons. The buttons bring up the dialog with the respective details.
 In landscape or large display layout mode, the app is displayed on two 'panes'. One pane showing the picture and brief info, the other pane showing a scrollable (if screen real estate demand) list of details.
 
+
 ## Libraries
-No third party libraries were used. Libraries and api's used are all stock android. As already outlined in *Codebase description* above.
+No third party libraries were used. Libraries and api's used are all stock android, as already outlined in *Codebase description* above.
+
 
 ## Future Features
 With more time, some other features to implement include: 
@@ -37,6 +42,7 @@ With more time, some other features to implement include:
 3. More UI decorations: icons for social media links, etc
 4. Job applications management system.
 
+
 ## Link
 APK: [Google Drive](https://drive.google.com/file/d/1O9ZNwMhFU_7jLSMF7hwbnuykj4ILqcj7/view?usp=sharing)
 
@@ -44,6 +50,8 @@ APK: [Google Drive](https://drive.google.com/file/d/1O9ZNwMhFU_7jLSMF7hwbnuykj4I
 ## Challenges
 - Testing for large screens: No physical device available for testing. Online tools had to be used and the debug features were not as good as that in android studio.
 - Implementing French. The numerous use of apostrophes in French language causes issues during compilation. The apostrophes must all be escaped. Unfortunately, android studio does not provide a clear error message. This added over 1Hr to the total development time.
-- Maintaining a proper aspect ratio for profile picture across layouts. Thankfully discovered a very helpful featur this with constraintLayout.
+- Maintaining a proper aspect ratio for profile picture across layouts: Thankfully discovered a very helpful feature for this in constraintLayout.
+
 
 ## Appetize.io
+[Play](https://appetize.io/app/44y27kapwvkkc3vqrqlkvqqnbi)
