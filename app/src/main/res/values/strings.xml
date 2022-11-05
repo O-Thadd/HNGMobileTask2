@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" translatable="false">HNG Task2 Thadd</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="aboutMe_body">Energetic and curiosity-driven junior level Android developer with 2 years\' experience learning and working with android development. Eager to be part of a group/company to provide support to deliver world class products and incredible user experience.</string>
+    <string name="myOffers_body">- \tBuild an android app for any given design irrespective of complexity. \n\n- \tSeamlessly link android apps to any given backend APIs. \n\n- \tAdept in the google playstore app submission process. \n\n- \tGood follower. Capable leader myself if ever required. \n\n- \tFast learner. \n\n- \tAdmirer of all things beautiful.</string>
+    <string name="socials_body" translatable="false">- \tGitHub: github.com/O-Thadd \n\n- \tTwitter: @ThaddeusOjike \n\n- \tLinkedIn: linkedin.com/in/thaddeus-ojike</string>
+    <string name="about_me">About Me</string>
+    <string name="socials">Socials</string>
+    <string name="my_offers">My Offers</string>
+    <string name="my_name" translatable="false">Thadd Ojike</string>
+    <string name="my_slack_username" translatable="false">Thadd</string>
+    <string name="title">Native(Kotlin) Android Dev. Intern</string>
+    <string name="theme_menu_item">Theme</string>
+    <string name="language_menu_item">Language</string>
+    <string name="light_menu_item">Light</string>
+    <string name="dark_menu_item">Dark</string>
+    <string name="system_menu_item">System</string>
+    <string name="english_menu_item">English</string>
+    <string name="french_menu_item">French</string>
+    <string name="german_menu_item">German</string>
+</resources>

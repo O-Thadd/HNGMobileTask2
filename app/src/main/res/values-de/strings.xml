@@ -1,0 +1,16 @@
+<resources>
+    <string name="aboutMe_body">Energischer und neugieriger Android-Entwickler auf Junior-Level mit 2 Jahren Erfahrung im Lernen und Arbeiten mit der Android-Entwicklung. Begierig darauf, Teil einer Gruppe / eines Unternehmens zu sein, um Unterstützung bei der Bereitstellung von Weltklasse-Produkten und einer unglaublichen Benutzererfahrung zu bieten.</string>
+    <string name="myOffers_body">- \tErstellen Sie eine Android-App für jedes beliebige Design, unabhängig von der Komplexität. \n\n- \tVerknüpfen Sie Android-Apps nahtlos mit beliebigen Backend-APIs. \n\n- \tVersiert im Einreichungsprozess für Google Playstore-Apps. \n\n- \tGuter Anhänger. Fähiger Anführer selbst, falls jemals erforderlich. \n\n- \tSchneller Lerner. \n\n- \tBewunderer aller schönen Dinge.</string>
+    <string name="about_me">Über mich</string>
+    <string name="socials">Soziales</string>
+    <string name="my_offers">Meine Angebote</string>
+    <string name="title">Native (Kotlin) Android-Entwickler. Intern</string>
+    <string name="theme_menu_item">Thema</string>
+    <string name="language_menu_item">Sprache</string>
+    <string name="light_menu_item">Licht</string>
+    <string name="dark_menu_item">Dunkel</string>
+    <string name="system_menu_item">System</string>
+    <string name="english_menu_item">Englisch</string>
+    <string name="french_menu_item">Französisch</string>
+    <string name="german_menu_item">Deutsch</string>
+</resources>

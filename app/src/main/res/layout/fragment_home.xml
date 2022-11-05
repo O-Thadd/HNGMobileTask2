@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.othadd.hngtask1thadd.MyViewModel" />
+
+        <variable
+            name="homeFragment"
+            type="com.othadd.hngtask1thadd.HomeFragment" />
+
+        <variable
+            name="lightTheme"
+            type="java.lang.String" />
+
+        <variable
+            name="darkTheme"
+            type="java.lang.String" />
+
+        <variable
+            name="systemTheme"
+            type="java.lang.String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/titleBar_linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/title_bar_color"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/appName_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> homeFragment.showMenu()}"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/avi_imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/square_avi"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="3:4.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleBar_linearLayout"
+            app:shapeAppearanceOverlay="@style/Image.Round" />
+
+        <TextView
+            android:id="@+id/name_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/amaranth_bold"
+            android:text="@string/my_name"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avi_imageView" />
+
+        <ImageView
+            android:id="@+id/slack_imageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/slack"
+            app:layout_constraintBottom_toBottomOf="@id/username_textView"
+            app:layout_constraintEnd_toStartOf="@id/username_textView"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/name_textView"
+            app:layout_constraintTop_toTopOf="@id/username_textView" />
+
+        <TextView
+            android:id="@+id/username_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_slack_username"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/name_textView"
+            app:layout_constraintStart_toEndOf="@id/slack_imageView"
+            app:layout_constraintTop_toBottomOf="@id/name_textView" />
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/name_textView"
+            app:layout_constraintStart_toStartOf="@id/name_textView"
+            app:layout_constraintTop_toBottomOf="@id/username_textView" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/my_purple"
+            app:layout_constraintEnd_toEndOf="@id/title_textView"
+            app:layout_constraintStart_toStartOf="@id/title_textView"
+            app:layout_constraintTop_toBottomOf="@id/title_textView" />
+
+        <LinearLayout
+            android:id="@+id/aboutMe_linearLayout"
+            android:layout_width="@dimen/bottom_items_width"
+            android:layout_height="@dimen/bottom_items_height"
+            android:background="@drawable/bg_card"
+            android:gravity="center"
+            android:onClick="@{() -> viewModel.showDialog(1)}"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/socials_linearLayout"
+            app:layout_constraintEnd_toStartOf="@id/socials_linearLayout"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/bottom_items_icon_width"
+                android:layout_height="@dimen/bottom_items_icon_height"
+                android:src="@drawable/aboutme_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_me"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_items_textSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/socials_linearLayout"
+            android:layout_width="@dimen/bottom_items_width"
+            android:layout_height="@dimen/bottom_items_height"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_card"
+            android:gravity="center"
+            android:onClick="@{() -> viewModel.showDialog(2)}"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/myOffers_linearLayout"
+            app:layout_constraintStart_toEndOf="@id/aboutMe_linearLayout">
+
+            <ImageView
+                android:layout_width="@dimen/bottom_items_icon_width"
+                android:layout_height="@dimen/bottom_items_icon_height"
+                android:src="@drawable/socials_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/socials"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_items_textSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/myOffers_linearLayout"
+            android:layout_width="@dimen/bottom_items_width"
+            android:layout_height="@dimen/bottom_items_height"
+            android:background="@drawable/bg_card"
+            android:gravity="center"
+            android:onClick="@{() -> viewModel.showDialog(3)}"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/socials_linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/socials_linearLayout">
+
+            <ImageView
+                android:layout_width="@dimen/bottom_items_icon_width"
+                android:layout_height="@dimen/bottom_items_icon_height"
+                android:src="@drawable/tools_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_offers"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_items_textSize" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/dialog_overLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.7"
+            android:background="@color/black"
+            android:onClick="@{() -> viewModel.hideDialog()}"
+            android:visibility="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dialog_constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:background="@drawable/bg_dialog"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <LinearLayout
+                android:id="@+id/dialogHead_linearLayout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_card"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/dialogHeadImage_imageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/tools_white" />
+
+                <TextView
+                    android:id="@+id/dialogHeadText_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_offers"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dialogBody_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/socials_body"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dialogHead_linearLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/menu_overLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{() -> homeFragment.hideMenusAndOverlay()}"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/settings_linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_settings"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/themeMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> homeFragment.showThemeMenu()}"
+                android:padding="12dp"
+                android:text="@string/theme_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/LanguageMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> homeFragment.showLanguageMenu()}"
+                android:padding="12dp"
+                android:text="@string/language_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/themeSettings_linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_settings"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/lightMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> homeFragment.changeTheme(lightTheme)}"
+                android:padding="12dp"
+                android:text="@string/light_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/darkMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> homeFragment.changeTheme(darkTheme)}"
+                android:padding="12dp"
+                android:text="@string/dark_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/themeSystemMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> homeFragment.changeTheme(systemTheme)}"
+                android:padding="12dp"
+                android:text="@string/system_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/languageSettings_linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_settings"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/englishMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick='@{() -> viewModel.changeLanguage("en")}'
+                android:padding="12dp"
+                android:text="@string/english_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/frenchMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick='@{() -> viewModel.changeLanguage("fr")}'
+                android:padding="12dp"
+                android:text="@string/french_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/germanMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick='@{() -> viewModel.changeLanguage("de")}'
+                android:padding="12dp"
+                android:text="@string/german_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/systemLanguageMenuItem_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick='@{() -> viewModel.changeLanguage("en")}'
+                android:padding="12dp"
+                android:text="@string/system_menu_item"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
